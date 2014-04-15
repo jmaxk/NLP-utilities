@@ -1,0 +1,6 @@
+package max.nlp.wrappers.ml.weka;
+
+public abstract class WekaFilter {
+
+	public abstract boolean passesFilter(Object... data);
+}

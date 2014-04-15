@@ -1,0 +1,127 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>max.nlp</groupId>
+	<artifactId>util</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<dependencies>
+		<!-- local -->
+		<dependency>
+			<groupId>edu.berkeley.nlp</groupId>
+			<artifactId>align</artifactId>
+			<version>2.0.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>edu.mit</groupId>
+			<artifactId>jmwe</artifactId>
+			<version>1.0.1</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>edu.mit</groupId>
+			<artifactId>jwi</artifactId>
+			<version>2.3.0</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>edu.mit</groupId>
+			<artifactId>jverbnet</artifactId>
+			<version>1.2.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.lexvo</groupId>
+			<artifactId>uwn</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>edu.sussex.nlp</groupId>
+			<artifactId>jws</artifactId>
+			<version>beta-11</version>
+		</dependency>
+		<!-- end local -->
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>1.3.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.yaml</groupId>
+			<artifactId>snakeyaml</artifactId>
+			<version>1.9</version>
+		</dependency>
+
+		<!-- Stanford -->
+		<dependency>
+			<groupId>edu.stanford.nlp</groupId>
+			<artifactId>stanford-corenlp</artifactId>
+			<version>3.2.0</version>
+			<classifier>models</classifier>
+		</dependency>
+		<dependency>
+			<groupId>edu.stanford.nlp</groupId>
+			<artifactId>stanford-corenlp</artifactId>
+			<version>3.2.0</version>
+		</dependency>
+		<!-- End Stanford -->
+
+		<dependency>
+			<groupId>cc.mallet</groupId>
+			<artifactId>mallet</artifactId>
+			<version>2.0.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>15.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>max.nlp</groupId>
+			<artifactId>dal</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		
+		<dependency>
+	<groupId>org.json</groupId>
+	<artifactId>json</artifactId>
+	<version>20131018</version>
+</dependency>
+            
+            <dependency>
+	<groupId>nz.ac.waikato.cms.weka</groupId>
+	<artifactId>weka-stable</artifactId>
+	<version>3.6.10</version>
+</dependency>
+
+<dependency>
+	<groupId>org.apache.lucene</groupId>
+	<artifactId>lucene-core</artifactId>
+	<version>4.6.1</version>
+</dependency>
+
+<dependency>
+	<groupId>org.apache.lucene</groupId>
+	<artifactId>lucene-analyzers-common</artifactId>
+	<version>4.6.1</version>
+</dependency>
+            
+            
+            
+
+	</dependencies>
+</project>

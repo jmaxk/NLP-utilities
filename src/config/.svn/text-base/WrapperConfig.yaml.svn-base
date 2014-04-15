@@ -1,0 +1,4 @@
+uwn.dir: "C:\\Users\\max.kaufmann\\Downloads\\uwn"
+wordnet.defaultDir:  "/home/max/resources/WordNet/3.0/dict"
+jwme.indexFile: "C:\\Users\\max.kaufmann\\Downloads\\mweindex_wordnet3.0_semcor1.6.data"
+verbnet.indexDir: "C:\\Users\\max.kaufmann\\Downloads\\verbnet-3.2.tar\\verbnet-3.2\\new_vn\\"

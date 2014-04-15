@@ -1,0 +1,17 @@
+package max.nlp.wrappers.ml.weka;
+
+import java.io.Serializable;
+import java.util.List;
+
+@SuppressWarnings("rawtypes")
+public class FeatureVectors implements Serializable{
+	private static final long serialVersionUID = 1L;
+	public List fv;
+	public String className;
+
+	public FeatureVectors(List vecs, String c) {
+		fv = vecs;
+		className = c;
+	}
+
+}

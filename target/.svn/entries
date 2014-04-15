@@ -1,0 +1,56 @@
+10
+
+dir
+0
+https://nlp-utils.googlecode.com/svn/trunk/util/target
+https://nlp-utils.googlecode.com/svn
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+87b84356-e01e-460c-7267-fafcbf9de425
+
+maven-archiver
+dir
+
+
+
+add
+
+surefire
+dir
+
+
+
+add
+
+util-0.0.1-SNAPSHOT.jar
+file
+
+
+
+add
+
+
+
+
+
+has-props
+has-prop-mods
+

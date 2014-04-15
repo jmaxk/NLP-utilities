@@ -1,0 +1,5 @@
+#surefire
+#Mon Feb 17 18:27:20 EST 2014
+user.dir=/home/max/workspace/util
+localRepository=/home/max/.m2/repository
+basedir=/home/max/workspace/util

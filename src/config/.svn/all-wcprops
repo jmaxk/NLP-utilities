@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/47/trunk/lyrics/src/main/resources/config
+END
+WrapperConfig.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/52/trunk/lyrics/src/main/resources/config/WrapperConfig.yaml
+END
+wcl.properties
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/30/trunk/lyrics/src/main/resources/config/wcl.properties
+END
+scrapingConfig.yaml
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/52/trunk/lyrics/src/main/resources/config/scrapingConfig.yaml
+END
+log4j.properties
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/52/trunk/lyrics/src/main/resources/config/log4j.properties
+END
+jlt.properties
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/30/trunk/lyrics/src/main/resources/config/jlt.properties
+END

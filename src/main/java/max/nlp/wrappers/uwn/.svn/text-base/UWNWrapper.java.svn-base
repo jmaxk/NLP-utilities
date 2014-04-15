@@ -1,0 +1,79 @@
+package max.nlp.wrappers.uwn;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Iterator;
+
+import max.nlp.wrappers.WrappingConfiguration;
+
+import org.lexvo.uwn.Entity;
+import org.lexvo.uwn.Statement;
+import org.lexvo.uwn.UWN;
+
+
+public class UWNWrapper {
+
+	private static UWNWrapper self;
+	private UWN uwn;
+
+	public UWN getUwn() {
+		return uwn;
+	}
+
+	public void setUwn(UWN uwn) {
+		this.uwn = uwn;
+	}
+
+	private WrappingConfiguration config = WrappingConfiguration.getInstance();
+
+	public static UWNWrapper getInstance() {
+		if (self == null)
+			self = new UWNWrapper();
+		return self;
+	}
+
+	private UWNWrapper() {
+		try {
+			uwn = new UWN(new File(config.getUWNDir()));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void getWord(String word, String language) {
+		try {
+			Iterator<Statement> it = uwn.getMeanings(Entity.createTerm(word,
+					language));
+			while (it.hasNext()) {
+				Statement meaningStatement = it.next();
+				Entity meaning = meaningStatement.getObject();
+				System.out.println(meaning + " with weight "
+						+ meaningStatement.getWeight());
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public String getMeaningInLanguage(Entity ent, String desiredLanguage) {
+		try {
+			Iterator<Statement> it2 = uwn.get(ent);
+			while (it2.hasNext()) {
+				Statement s = it2.next();
+				String language = s.getObject().getTermLanguage();
+				if (language.equals(desiredLanguage))
+					return s.getObject().getTermStr();
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+
+	public static void main(String[] args) {
+
+	}
+
+}

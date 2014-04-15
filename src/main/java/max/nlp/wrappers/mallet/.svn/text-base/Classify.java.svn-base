@@ -1,0 +1,50 @@
+package max.nlp.wrappers.mallet;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.util.ArrayList;
+
+import cc.mallet.classify.Classifier;
+import cc.mallet.classify.ClassifierTrainer;
+import cc.mallet.classify.NaiveBayesTrainer;
+import cc.mallet.pipe.CharSequence2TokenSequence;
+import cc.mallet.pipe.FeatureSequence2FeatureVector;
+import cc.mallet.pipe.Pipe;
+import cc.mallet.pipe.SerialPipes;
+import cc.mallet.pipe.Target2Label;
+import cc.mallet.pipe.TokenSequence2FeatureSequence;
+import cc.mallet.pipe.iterator.CsvIterator;
+import cc.mallet.types.InstanceList;
+
+public class Classify {
+	@SuppressWarnings("rawtypes")
+	public static void main(String[] args) {
+
+		try {
+			ArrayList<Pipe> pipes = new ArrayList<Pipe>();
+			pipes.add(new Target2Label());
+			pipes.add(new CharSequence2TokenSequence());
+			pipes.add(new TokenSequence2FeatureSequence());
+			pipes.add(new FeatureSequence2FeatureVector());
+			SerialPipes pipe = new SerialPipes(pipes);
+
+			// prepare training instances
+			InstanceList trainingInstanceList = new InstanceList(pipe);
+			trainingInstanceList.addThruPipe(new CsvIterator(new FileReader(
+					"datasets/training.txt"), "(.*),(.*)", 2, 1, -1));
+
+			// prepare test instances
+			InstanceList testingInstanceList = new InstanceList(pipe);
+			testingInstanceList.addThruPipe(new CsvIterator(new FileReader(
+					"datasets/testing.txt"), "(.*),(.*)", 2, 1, -1));
+
+			ClassifierTrainer trainer = new NaiveBayesTrainer();
+			Classifier classifier = trainer.train(trainingInstanceList);
+			System.out.println("Accuracy: "
+					+ classifier.getAccuracy(testingInstanceList));
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

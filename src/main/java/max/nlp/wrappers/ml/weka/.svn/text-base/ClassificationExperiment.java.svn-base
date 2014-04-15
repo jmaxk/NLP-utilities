@@ -1,0 +1,5 @@
+package max.nlp.wrappers.ml.weka;
+
+public class ClassificationExperiment {
+
+}

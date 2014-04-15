@@ -1,0 +1,118 @@
+package max.nlp.wrappers.stanford;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.Properties;
+
+import edu.stanford.nlp.ling.CoreAnnotations.PartOfSpeechAnnotation;
+import edu.stanford.nlp.ling.CoreAnnotations.SentencesAnnotation;
+import edu.stanford.nlp.ling.CoreAnnotations.TextAnnotation;
+import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation;
+import edu.stanford.nlp.ling.CoreLabel;
+import edu.stanford.nlp.pipeline.Annotation;
+import edu.stanford.nlp.pipeline.StanfordCoreNLP;
+import edu.stanford.nlp.util.CoreMap;
+
+public class StanfordNLP {
+
+	private static StanfordNLP self;
+	private static StanfordCoreNLP pipeline;
+
+	private StanfordNLP() {
+		Properties props = new Properties();
+		props.put("annotators", "tokenize, ssplit, pos, lemma");
+		pipeline = new StanfordCoreNLP(props);
+	}
+
+	private StanfordNLP(String annotators) {
+		Properties props = new Properties();
+		props.put("annotators", annotators);
+		pipeline = new StanfordCoreNLP(props);
+	}
+
+	public static StanfordNLP getInstance() {
+		if (self == null)
+			self = new StanfordNLP();
+		return self;
+	}
+
+	public static StanfordNLP getAlternateInstance(String annotators) {
+		return new StanfordNLP(annotators);
+	}
+
+	/**
+	 * @param text
+	 * @return a list of sentences
+	 */
+	public List<CoreMap> annotate(String text) {
+		Annotation document = new Annotation(text);
+		pipeline.annotate(document);
+		List<CoreMap> sentences = document.get(SentencesAnnotation.class);
+		return sentences;
+	}
+
+	public List<String> convertTextToTokens(String text) {
+		List<CoreMap> annotatedText = annotate(text);
+		List<String> words = new ArrayList<String>();
+		for (CoreMap sentence : annotatedText) {
+			LinkedHashMap<String, String> tokenizedSentence = extractAnnotationFromLabeledSentence("tokenization",
+							sentence);
+			for (Entry<String, String> e : tokenizedSentence.entrySet()) {
+				String word = e.getKey();
+				words.add(word);
+			}
+		}
+		return words;
+	}
+
+	/**
+	 * Supported annotation types: "token", "pos,"lemma
+	 * 
+	 * @param annotation
+	 * @param sentence
+	 * @return
+	 */
+	public LinkedHashMap<String, String> extractAnnotationFromLabeledSentence(
+			String annotation, CoreMap sentence) {
+
+		List<CoreLabel> annotations = new ArrayList<CoreLabel>();
+
+		// TODO: make this fail when an unsupported annotation is input. this is
+		// broken atm
+		if (annotation.equals("tokenization"))
+			annotations = sentence.get(TokensAnnotation.class);
+		// else if (annotation.equals("lemma"))
+		// annotations = sentence.get(LemmaAnnotation.class);
+		// else if (annotation.equals("pos"))
+		// annotations = sentence.get(PartOfSpeechAnnotation.class);
+		//
+
+		LinkedHashMap<String, String> taggedTokens = new LinkedHashMap<String, String>();
+		for (CoreLabel token : annotations) {
+			String word = token.get(TextAnnotation.class);
+			String pos = token.get(PartOfSpeechAnnotation.class);
+			taggedTokens.put(word, pos);
+		}
+
+		return taggedTokens;
+	}
+
+	public static void main(String[] args) {
+		StanfordNLP nlp = StanfordNLP.getInstance();
+		List<CoreMap> sentences = nlp.annotate("He goes to the store");
+
+		for (CoreMap sentence : sentences) {
+
+			for (CoreLabel token : sentence.get(TokensAnnotation.class)) {
+				// this is the text of the token
+				String word = token.get(TextAnnotation.class);
+				// this is the POS tag of the token
+				String pos = token.get(PartOfSpeechAnnotation.class);
+				System.out.println("[" + word + "/" + pos + "]");
+				;
+			}
+		}
+	}
+}

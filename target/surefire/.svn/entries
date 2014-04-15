@@ -1,0 +1,70 @@
+10
+
+dir
+0
+https://nlp-utils.googlecode.com/svn/trunk/util/target/surefire
+https://nlp-utils.googlecode.com/svn
+add
+
+
+
+
+
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+87b84356-e01e-460c-7267-fafcbf9de425
+
+surefire1199115802966464841tmp
+file
+
+
+
+add
+
+surefire2042359007913864390tmp
+file
+
+
+
+add
+
+surefire2236143491289613858tmp
+file
+
+
+
+add
+
+surefire7905238608507931915tmp
+file
+
+
+
+add
+
+surefire8634253912565942804tmp
+file
+
+
+
+add
+
+surefire8895090833800992133tmp
+file
+
+
+
+add
+

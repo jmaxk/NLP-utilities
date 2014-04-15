@@ -1,0 +1,35 @@
+package max.nlp.wrappers.ml.weka;
+
+import java.util.HashMap;
+
+public abstract class WekaFeatureExtractor<K, V> {
+
+	protected static String prefix;
+
+	public static String getPrefix() {
+		return prefix;
+	}
+
+	public static void setPrefix(String p) {
+		prefix = p;
+	}
+
+	
+
+	protected String name;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public WekaFeatureExtractor(String n) {
+		name = n;
+	}
+
+	public abstract HashMap<K, V> extractFeaturesForObject(Object item);
+
+}
