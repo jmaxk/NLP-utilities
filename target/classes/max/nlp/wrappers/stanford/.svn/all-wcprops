@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/6/trunk/util/src/main/java/max/nlp/wrappers/stanford
+END
+StanfordNLP.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/4/trunk/util/src/main/java/max/nlp/wrappers/stanford/StanfordNLP.java
+END
+StanfordNER.java
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/6/trunk/util/src/main/java/max/nlp/wrappers/stanford/StanfordNER.java
+END

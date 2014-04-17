@@ -22,6 +22,7 @@ public class ParseSentence {
 				parseLine(line.replaceAll(" ", ""));
 				System.exit(0);
 			}
+			b.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -8,8 +8,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
 
 import max.nlp.dal.generic.GenericDB;
@@ -265,6 +263,10 @@ public class BerkeleyAligner {
 				allAlignments.add(lineAlignment);
 				line++;
 			}
+			
+			alignmentReader.close();
+			eReader.close();
+			fReader.close();
 
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block

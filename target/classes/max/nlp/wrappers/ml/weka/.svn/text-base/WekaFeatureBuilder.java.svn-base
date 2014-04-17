@@ -1,0 +1,34 @@
+package max.nlp.wrappers.ml.weka;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@SuppressWarnings("rawtypes")
+public abstract class WekaFeatureBuilder {
+
+	protected List<WekaFeatureExtractor> featureExtractors = new ArrayList<WekaFeatureExtractor>();
+	protected List<WekaFilter> filters = new ArrayList<WekaFilter>();
+
+	public void addFeatureExtractor(WekaFeatureExtractor e) {
+		featureExtractors.add(e);
+	}
+
+	public List<WekaFeatureExtractor> getFeatureExtractors() {
+		return featureExtractors;
+	}
+
+	public void setFeatureExtractors(
+			List<WekaFeatureExtractor> featureExtractors) {
+		this.featureExtractors = featureExtractors;
+	}
+
+	public abstract FeatureVectors extract(String cName);
+
+	public boolean passesFilters(Object o) {
+		for (WekaFilter f : filters) {
+			if (!f.passesFilter(o))
+				return false;
+		}
+		return true;
+	}
+}

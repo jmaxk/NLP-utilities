@@ -57,6 +57,7 @@ public class ReadPhraseTable {
 				translations.add(new PialignTranslation(fWord, eWord, fToEProb,
 						eToFProb));
 			}
+			b.close();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

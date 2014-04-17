@@ -78,6 +78,7 @@ public class Reader {
 				}
 
 			}
+			b.close();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

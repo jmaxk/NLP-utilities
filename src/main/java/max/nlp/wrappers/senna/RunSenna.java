@@ -3,12 +3,8 @@ package max.nlp.wrappers.senna;
 import java.io.File;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.regex.Pattern;
 
 import max.nlp.dal.types.statistics.TaggedText;
 
@@ -24,7 +20,7 @@ public class RunSenna {
 			pb.directory(sennaInstallationDir);
 			Process shell = pb.start();
 			InputStream shellIn = shell.getInputStream();
-			int shellExitStatus = shell.waitFor();
+			shell.waitFor();
 			int c;
 			StringBuffer s = new StringBuffer();
 			while ((c = shellIn.read()) != -1) {
@@ -90,8 +86,8 @@ public class RunSenna {
 				taggedTokens.add(new TaggedText(token, pos));
 				while (!value.startsWith("E-")) {
 					i++;
-if (i  >= lineArr.length)
-	break;
+					if (i >= lineArr.length)
+						break;
 					lineTokens = lineArr[i].trim().split("\\s+");
 					token = lineTokens[0].trim();
 					pos = lineTokens[1].trim();
@@ -133,8 +129,7 @@ if (i  >= lineArr.length)
 		HashMap<String, List<String>> parsedLines = parseNERResults(nerResults);
 		return parsedLines;
 	}
-	
-	
+
 	public HashMap<String, List<String>> parseTree(String sentence) {
 		String nerResults = getSennaOutput(sentence, "-psg");
 		System.out.println(nerResults);
@@ -183,18 +178,18 @@ if (i  >= lineArr.length)
 
 	public static void main(String[] args) {
 		RunSenna r = new RunSenna();
-		
-		
-		r.parseTree("He was the editor of the paper");
-//		HashMap<String, SennaVerb> verbs = r
-//				.parse("As if the hostile takeover weren't enough, to add insult.");
 
-//		for (Entry<String, SennaVerb> e : verbs.entrySet()) {
-//			System.out.println(e.getKey());
-//			HashMap<String, List<TaggedText>> tagged = e.getValue().argumentToTagged;
-//			for (Entry<String, List<TaggedText>> g : tagged.entrySet())
-//				System.out.println(g);
-//		}
+		r.parseTree("He was the editor of the paper");
+		// HashMap<String, SennaVerb> verbs = r
+		// .parse("As if the hostile takeover weren't enough, to add insult.");
+
+		// for (Entry<String, SennaVerb> e : verbs.entrySet()) {
+		// System.out.println(e.getKey());
+		// HashMap<String, List<TaggedText>> tagged =
+		// e.getValue().argumentToTagged;
+		// for (Entry<String, List<TaggedText>> g : tagged.entrySet())
+		// System.out.println(g);
+		// }
 		// HashMap<String, List<String>> results = r
 		// .extractEntities("I went to the Golden Gate Bridge with Bill Gates ");
 		// for (Entry<String, List<String>> e : results.entrySet()) {

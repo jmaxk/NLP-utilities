@@ -6,6 +6,10 @@ import java.util.Map;
 @SuppressWarnings("rawtypes")
 public class MapUtils {
 
+	/**
+	 * Prints out the entries in a map
+	 * @param map
+	 */
 	public static void printMap(Map map) {
 		Iterator iterator = map.keySet().iterator();
 
@@ -17,6 +21,11 @@ public class MapUtils {
 		System.out.println();
 	}
 
+	/**
+	 * Prints out a subset of the entries in a map
+	 * @param map
+	 * @param limit
+	 */
 	public static void printMap(Map map, int limit) {
 		Iterator iterator = map.keySet().iterator();
 		int count = 0;

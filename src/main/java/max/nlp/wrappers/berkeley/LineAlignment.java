@@ -1,7 +1,6 @@
 package max.nlp.wrappers.berkeley;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 

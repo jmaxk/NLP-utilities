@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/6/trunk/util/src/main/java/max/nlp/wrappers/ml/weka
+END
+WekaFilter.java
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/6/trunk/util/src/main/java/max/nlp/wrappers/ml/weka/WekaFilter.java
+END
+NClassClassifier.java
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/6/trunk/util/src/main/java/max/nlp/wrappers/ml/weka/NClassClassifier.java
+END
+FeatureVectors.java
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/svn/!svn/ver/6/trunk/util/src/main/java/max/nlp/wrappers/ml/weka/FeatureVectors.java
+END
+WekaFeatureBuilder.java
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/6/trunk/util/src/main/java/max/nlp/wrappers/ml/weka/WekaFeatureBuilder.java
+END
+ClassificationExperiment.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/6/trunk/util/src/main/java/max/nlp/wrappers/ml/weka/ClassificationExperiment.java
+END
+WekaFeatureExtractor.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/6/trunk/util/src/main/java/max/nlp/wrappers/ml/weka/WekaFeatureExtractor.java
+END
