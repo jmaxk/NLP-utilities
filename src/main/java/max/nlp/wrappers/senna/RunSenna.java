@@ -7,17 +7,18 @@ import java.util.HashMap;
 import java.util.List;
 
 import max.nlp.dal.types.statistics.TaggedText;
+import max.nlp.wrappers.WrappingConfiguration;
 
 public class RunSenna {
-	File sennaInstallationDir = new File("/home/max/resources/senna/");
-	String[] lineArr;
+	private String sennaInstallationDir = WrappingConfiguration.getInstance().getSennaDir();
+	private String[] lineArr;
 
 	public String getSennaOutput(String line, String options) {
 		try {
 			String cmd = "echo " + line + " | " + sennaInstallationDir
 					+ "/senna " + options;
 			ProcessBuilder pb = new ProcessBuilder("bash", "-c", cmd);
-			pb.directory(sennaInstallationDir);
+			pb.directory(new File(sennaInstallationDir));
 			Process shell = pb.start();
 			InputStream shellIn = shell.getInputStream();
 			shell.waitFor();

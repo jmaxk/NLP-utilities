@@ -133,28 +133,20 @@ public class JWMEWrapper {
 	}
 
 	public static void main(String[] args) {
-		try {
-			File idxData = new File(
-					"C:\\Users\\max.kaufmann\\Downloads\\mweindex_wordnet3.0_semcor1.6.data");
-			IMWEIndex index = new MWEIndex(idxData);
-			index.open();
-			IMWEDetector detector = new Consecutive(index);
-			List<IToken> sentence = new ArrayList<IToken>();
-			sentence.add(new Token("She", "DT"));
-			sentence.add(new Token(" looked ", "VBD"));
-			sentence.add(new Token("up", "RP"));
-			sentence.add(new Token("the", "DT"));
-			sentence.add(new Token(" world ", "NN"));
-			sentence.add(new Token(" record ", "NN"));
-			sentence.add(new Token(".", "."));
+		List<IToken> sentence = new ArrayList<IToken>();
+		sentence.add(new Token("She", "DT"));
+		sentence.add(new Token(" looked ", "VBD"));
+		sentence.add(new Token("up", "RP"));
+		sentence.add(new Token("the", "DT"));
+		sentence.add(new Token(" world ", "NN"));
+		sentence.add(new Token(" record ", "NN"));
+		sentence.add(new Token(".", "."));
+		IMWEDetector detector = JWMEWrapper.getInstance().detectorFromName(
+				"consecutive");
+		// run detector and print out results
+		List<IMWE<IToken>> mwes = detector.detect(sentence);
+		for (IMWE<IToken> mwe : mwes)
+			System.out.println(mwe);
 
-			// run detector and print out results
-			List<IMWE<IToken>> mwes = detector.detect(sentence);
-			for (IMWE<IToken> mwe : mwes)
-				System.out.println(mwe);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 	}
 }

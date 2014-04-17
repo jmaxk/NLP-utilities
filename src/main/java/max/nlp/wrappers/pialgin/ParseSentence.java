@@ -10,10 +10,10 @@ public class ParseSentence {
 
 	public static void main(String[] args) {
 		ParseSentence s = new ParseSentence();
-		s.parse("/home/max/pialign-0.2.4/out/align.1.samp");
+		s.parseAlignments("/home/max/pialign-0.2.4/out/align.1.samp");
 	}
 
-	public void parse(String inputFile) {
+	public void parseAlignments(String inputFile) {
 		try {
 			BufferedReader b = new BufferedReader(new FileReader(new File(
 					inputFile)));

@@ -29,9 +29,9 @@ public class BerkeleyAligner {
 	private static final double THRESHOLD = .01;
 	private final String L1 = "e";
 	private final String L2 = "f";
-	private String CONFIG_FILE = "/home/max/resources/berkeleyaligner/example_confs/test.conf";
-	private String EXEC_DIR = "/home/max/resources/berkeleyaligner/output_encs";
-	private String TRAIN_DIR = "/home/max/resources/berkeleyaligner/example_datasets/encs";
+	private String CONFIG_FILE ;
+	private String EXEC_DIR;
+	private String TRAIN_DIR;
 
 	public void setConfig(String cONFIG_FILE) {
 		CONFIG_FILE = cONFIG_FILE;

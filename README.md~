@@ -1,6 +1,6 @@
 This project contains various utilities I wrote to help me in my NLP research. I wrote these for personal use, so there is no gaurantee that they will work. 
 
-The most useful section is the wrappers section, which has Java interfaces to various NLP tools. You will need to get the data yourself for most of them. Once you have gotten the data, you will need to change the configuration in src/config/WrappingConfig.yaml
+The most useful section is the wrappers section, which has Java interfaces to various NLP tools. You will need to get the data yourself for most of them. Once you have gotten the data, you will need to change the configuration in src/
 
 
 
