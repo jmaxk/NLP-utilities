@@ -159,7 +159,5 @@ public class StanfordNER {
 		}
  		return filteredEntities;
 	}
-	public static void main(String[] args) {
-		StanfordNLP nllp = StanfordNLP.getInstance();
-	}
+	
 }

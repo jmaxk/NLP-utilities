@@ -153,6 +153,7 @@ public class StanfordNLP {
 		List<String> cleandSentences = new ArrayList<String>();
 		if (annotation.equals("ssplit")) {
 			for (CoreMap sentence : sentences) {
+				@SuppressWarnings("unused")
 				List<CoreMap> annotations = sentence
 						.get(SentencesAnnotation.class);
 				StringBuilder sb = new StringBuilder();
@@ -169,8 +170,8 @@ public class StanfordNLP {
 	}
 
 	public static void main(String[] args) {
-		StanfordNLP nlp = StanfordNLP
-				.getInstance("tokenize, ssplit, pos, lemma, parse");
+//		StanfordNLP nlp = StanfordNLP
+//				.getInstance("tokenize, ssplit, pos, lemma, parse");
 		//
 		// for (CoreMap sentence : sentences) {
 		//

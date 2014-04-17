@@ -15,9 +15,8 @@ public class ReadPhraseTable {
 	public static void main(String[] args) {
 		ReadPhraseTable s = new ReadPhraseTable();
 		List<PialignTranslation> translations = s
-				.parse("/home/max/pialign-0.2.4/out/align.1.pt");
+				.parseTranslations("/home/max/pialign-0.2.4/out/align.1.pt");
 		Map<String, PialignTranslation> english = s.indexTranslations(translations, "e");
-//		System.out.println(translations.get(1));
 		System.out.println(english.get("put"));
 	}
 
@@ -38,7 +37,7 @@ public class ReadPhraseTable {
 		return index;
 	}
 
-	public List<PialignTranslation> parse(String inputFile) {
+	public List<PialignTranslation> parseTranslations(String inputFile) {
 		List<PialignTranslation> translations = new ArrayList<PialignTranslation>();
 
 		try {

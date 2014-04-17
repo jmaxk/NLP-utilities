@@ -25,6 +25,7 @@ public class WrappingConfiguration {
 		return conf;
 	}
 
+	@SuppressWarnings("unchecked")
 	private WrappingConfiguration() {
 		table = new Hashtable<Object, Object>();
 		InputStream io = Thread.currentThread().getContextClassLoader()
@@ -79,6 +80,8 @@ public class WrappingConfiguration {
 	public String getSennaDir() {
 		return (String) table.get("senna.dir");
 	}
+	
+	
 
 
 }
