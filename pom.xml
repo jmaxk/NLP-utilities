@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>max.nlp</groupId>
 	<artifactId>util</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 
 	<dependencies>
 		<!-- local -->
@@ -89,39 +89,39 @@
 			<artifactId>guava</artifactId>
 			<version>15.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>max.nlp</groupId>
 			<artifactId>dal</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-		
+
 		<dependency>
-	<groupId>org.json</groupId>
-	<artifactId>json</artifactId>
-	<version>20131018</version>
-</dependency>
-            
-            <dependency>
-	<groupId>nz.ac.waikato.cms.weka</groupId>
-	<artifactId>weka-stable</artifactId>
-	<version>3.6.10</version>
-</dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20131018</version>
+		</dependency>
 
-<dependency>
-	<groupId>org.apache.lucene</groupId>
-	<artifactId>lucene-core</artifactId>
-	<version>4.6.1</version>
-</dependency>
+		<dependency>
+			<groupId>nz.ac.waikato.cms.weka</groupId>
+			<artifactId>weka-stable</artifactId>
+			<version>3.6.10</version>
+		</dependency>
 
-<dependency>
-	<groupId>org.apache.lucene</groupId>
-	<artifactId>lucene-analyzers-common</artifactId>
-	<version>4.6.1</version>
-</dependency>
-            
-            
-            
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-core</artifactId>
+			<version>4.6.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.lucene</groupId>
+			<artifactId>lucene-analyzers-common</artifactId>
+			<version>4.6.1</version>
+		</dependency>
+
+
+
 
 	</dependencies>
 </project>
