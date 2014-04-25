@@ -122,6 +122,18 @@
 
 
 
+		<dependency>
+			<groupId>misc</groupId>
+			<artifactId>ansj_seg</artifactId>
+			<version>1.0.alpha</version>
+		</dependency>
+		
+		
+		<dependency>
+			<groupId>misc</groupId>
+			<artifactId>tree_split</artifactId>
+			<version>1.0.1</version>
+		</dependency>
 
 	</dependencies>
 </project>

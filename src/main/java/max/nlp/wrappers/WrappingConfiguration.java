@@ -80,6 +80,11 @@ public class WrappingConfiguration {
 	public String getSennaDir() {
 		return (String) table.get("senna.dir");
 	}
+
+	public String getMypersonalityDir() {
+		return (String) table.get("mypers.dir");
+	}
+	
 	
 	
 

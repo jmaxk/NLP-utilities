@@ -4,3 +4,4 @@ jwme.indexFile: "C:\\Users\\max.kaufmann\\Downloads\\mweindex_wordnet3.0_semcor1
 verbnet.indexDir: "C:\\Users\\max.kaufmann\\Downloads\\verbnet-3.2.tar\\verbnet-3.2\\new_vn\\"
 stanford.ner: "/home/max/workspace/util/english.all.3class.nodistsim.crf.ser.gz"
 senna.dir: "/home/jmaxk/resources/senna"
+mypers.dir: "/home/jmaxk/resources/mypersonality/"
